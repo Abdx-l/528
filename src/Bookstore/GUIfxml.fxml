@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="Bookstore.GUIfxmlController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bookstore.GUIfxmlController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
             <Label layoutX="103.0" layoutY="75.0" text="Welcome to the BookStore App" />
             <Label layoutX="103.0" layoutY="105.0" text="Username:" />
             <Label layoutX="103.0" layoutY="138.0" text="Password:" />
-            <Button layoutX="187.0" layoutY="175.0" mnemonicParsing="false" text="Login" fx:id="loginButton" onAction="#handleLoginButton"/>
-            <TextField layoutX="170.0" layoutY="101.0" fx:id="usernameField"/>
-            <TextField layoutX="170.0" layoutY="134.0" fx:id="passwordField"/>
+            <Button layoutX="170.0" layoutY="175.0" mnemonicParsing="false" text="Login" />
+            <TextField layoutX="170.0" layoutY="101.0" />
+            <TextField layoutX="170.0" layoutY="134.0" />
          </children>
       </Pane>
    </children>
