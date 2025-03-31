@@ -1,0 +1,3 @@
+jane,jane,0
+user,user,0
+customer1,customer1,0
