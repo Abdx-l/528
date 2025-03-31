@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="Bookstore.CustomerStartFXMLController"
+      style="-fx-background-color: #f0f0f0;">
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="Bookstore.CustomerStartFXMLController">
-   <children>
-      <Text layoutX="147.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Name, You have P points. Your status is S" wrappingWidth="284.806640625" />
-      <TableView layoutX="137.0" layoutY="131.0" prefHeight="200.0" prefWidth="285.0">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Welcome Message -->
+    <Label fx:id="welcomeLabel" layoutX="20.0" layoutY="15.0" 
+           style="-fx-font-size: 16pt; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+
+    <!-- Book Table -->
+    <TableView fx:id="booksTable" layoutX="20.0" layoutY="50.0" 
+               prefHeight="300.0" prefWidth="560.0"
+               style="-fx-border-color: #999; -fx-border-width: 1; -fx-padding: 3;">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="nameColumn" text="Book Name" prefWidth="200.0"
+                        style="-fx-font-family: 'Arial'; -fx-font-size: 13;"/>
+            <TableColumn fx:id="priceColumn" text="Book Price" prefWidth="180.0"
+                        style="-fx-font-family: 'Arial'; -fx-alignment: CENTER-RIGHT;"/>
+            <TableColumn fx:id="selectColumn" text="Select" prefWidth="180.0"
+                        style="-fx-font-style: italic; -fx-alignment: CENTER;"/>
         </columns>
-      </TableView>
-      <Button layoutX="137.0" layoutY="345.0" mnemonicParsing="false" text="Buy" />
-      <Button layoutX="232.0" layoutY="345.0" mnemonicParsing="false" text="Redeem Points" />
-      <Button layoutX="368.0" layoutY="345.0" mnemonicParsing="false" text="Logout" />
-   </children>
+    </TableView>
+
+    <!-- Buttons -->
+    <HBox layoutX="150.0" layoutY="370.0" spacing="30.0">
+        <Button text="Buy" onAction="#handleBuyButton" prefWidth="150"
+               style="-fx-background-color: #e8e8e8; -fx-border-radius: 3; -fx-padding: 3 8 3 8;"/>
+        <Button text="Redeem and Buy" onAction="#handleRedeemAndBuyButton" prefWidth="150"
+               style="-fx-background-color: #e0e0ff; -fx-padding: 3 8 3 8;"/>
+        <Button text="Logout" onAction="#handleLogoutButton" prefWidth="150"
+               style="-fx-background-color: #ffe0e0; -fx-padding: 3 15 3 15;"/>
+    </HBox>
 </AnchorPane>
